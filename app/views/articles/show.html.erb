@@ -1,0 +1,59 @@
+<!-- ********************************************************************************************************* -->
+<!-- SHOW ARTICLES PAGE STARTS HERE                                                                    ******* -->
+<!-- ********************************************************************************************************* -->
+<div class="container-fluid anchor_show" id="show">
+  <div class="row articleFeatures">
+    <p id="notice"><%= notice %></p>
+
+    <h2 class="articleTitle"> <%= @article.article_title %></h2>
+    <h5 class="articlePostedByInfo">Posted by: <%= @article.posted_by %><span>  /  <%= @article.posted_date %> </span></h5>
+
+    <!-- Display article content -->
+    <div class="col-md-6 col-xs-6"> <!-- col-md-6 col-xs-6 -->
+      <div class="productFields">
+
+        <h2>
+          <strong>Article features:</strong>
+        </h2>
+        <p class="articleText"> <%= @article.article_text %> </p>
+
+        <p><%= image_tag(@article.article_image, alt: "Edit Entry", class: "showArticleImage img-responsive")%></p> 
+
+        <% if @article.article_video.include? "embed" %>
+          <p class="youtube_video">
+            <iframe class= "youtubeVideo" src="<%=@article.article_video %>" frameborder="0" allowfullscreen></iframe>
+          </p>
+
+        <% elsif @article.article_video.include? "jpg" %>
+          <p><%= image_tag(@article.article_video, alt: "Edit Entry", class: "showArticleVideo img-responsive")%></p> 
+        <% else %>
+          <p class="articleText"> <%= @article.article_text %> </p>
+        <% end %>
+
+        <p class="articleText"> <%= @article.article_details %> </p>
+      </div>
+    </div>
+
+    <!-- Form to capture comments for the article -->
+    <div class="col-md-6 col-xs-6 commentsForm"> <!-- col-md-6 col-xs-6 -->
+      <%= render 'comments/form' %>
+    </div>
+  </div>
+
+  <!-- Show Article Comments -->
+  <!-- Display the partial page here -->
+   <%= render @article.comments.desc %> 
+
+
+  <div class="row">
+    <div class="indexButtons">
+
+      <!-- Go to BLOG Index page -->
+      <%= button_to "Blog", root_path, class: 'btn btn-primary btn-sm inline articleButtons', :method => :get %>
+
+      <!-- Go to Articles list -->
+      <%= button_to "Articles", article_path, class: 'btn btn-primary btn-sm inline articleButtons', :method => :get %>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,82 @@
+// Place all the styles related to the Comments controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+div.col-md-6.col-xs-6.commentsForm {
+	height: auto;
+}	
+
+
+.youtube_video {
+//  float: left;
+  width: 100%;
+}
+
+.youtubeVideo {
+  width: 85%;
+  margin-left: 15px;
+  height: 20em;  //345px; //35em;
+}
+
+.articlecComment {
+	width: 75%;
+	apdding-left: 15px;
+}
+
+.commentsForm {	
+	position: fixed;
+	width: 30%;
+	top: 7.5em;
+	left: 53%;
+	border-style: solid;
+  border-width: 1px;
+  border-color: blue;
+}
+
+
+.commentRow {
+	border-style: solid;
+	border-width: 1px;
+	border-color: grey;
+	padding: 0;
+	padding-left: 3px;
+	margin-left: 15px;
+}
+
+.commentButtons {
+	background-color: green; // #9d9d9d;
+}
+
+.formText {
+	margin-top: 10px;
+}
+
+.formField {
+	margin: 0;
+}
+
+/*****************************************************/
+/*  Max-width = 1040px                               */
+/*****************************************************/
+@media (max-width: 1040px) {
+	div.col-md-6.col-xs-6.commentsForm {
+		position: relative;
+		width: 60%;
+		top: 0;
+		left: 0;
+		clear: both;
+		}	
+}
+
+/*****************************************************/
+/*  Max-width = 620px                                */
+/*****************************************************/
+@media (max-width: 620px) {
+	div.col-md-6.col-xs-6.commentsForm {
+		position: relative;
+		width: 75%;
+		top: 0;
+		left: 0;
+		clear: both;
+		}	
+}

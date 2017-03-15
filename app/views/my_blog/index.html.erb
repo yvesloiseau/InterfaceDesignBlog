@@ -1,5 +1,28 @@
 <!-- <h1>Welcome to my blog - Interface Design Web discussions</h1> -->
 <!-- <p>Find me in interfacedesignweb.ca</p> -->
-<h1>Welcome to my blog</h1>
-<h2>To reaach me in private: www.interfacedesignweb.ca</h2>
+<div class="container-fluid anchor_index" id="index">
+  <div class="row">
+    <div class="col-md-12 col-xs-12"> <!-- col-md-4 col-xs-8 -->
+			<h1>Welcome to my blog</h1>
+		</div>
+	</div>
 
+  <div class="row">
+    <div class="col-md-12 col-xs-12"> <!-- col-md-4 col-xs-8 -->
+			<div class="golfBlofTextBox">
+				<h2 class="golfBlogTitle">My blog is about golf, my passion!!</h2>
+				<h4 class="golfBlog">Never play enought,</h4>
+				<h4 class="golfBlog">Winter is too long,</h4>
+				<h4 class="golfBlog">Always ready for a game,</h4>
+				<h4 class="golfBlog">Love to play everywhere and experience new courses.</h4>
+			</div>
+	    <div class="enterBlogBUtton">
+				<h3>Click to enter blog</h3>
+	     	  <!-- Go back -->
+			  <%= button_to "My blog", articles_path, class: 'btn btn-primary btn-sm inline', :method => :get %>
+     	</div>
+		  <div class="">
+			</div>
+    </div>
+  </div>
+</div><!-- /container -->

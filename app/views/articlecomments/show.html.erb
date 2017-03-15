@@ -1,0 +1,28 @@
+<!-- *********************************************************************************************************** -->
+<!-- SHOW ARTICLES PAGE STARTS HERE                                                                       *******-->
+<!-- *********************************************************************************************************** -->
+<div class="container-fluid anchor_show" id="show">
+  <div class="row">
+    <p id="notice"><%= notice %></p>
+    <h2> <%= @articlecomment.article_id %></h2>
+    <h3> <%= @articlecomment.comment %></h2>
+    <h5 class="articlePostedByInfo">Posted by: <%= @articlecomment.posted_by %><span>  /  <%= @articlecomment.posted_date %> </span></h5>
+
+    <div class="col-md-6 col-xs-6"> <!-- col-md-4 col-xs-8 -->
+      <div class="productFields">
+
+        <p class="articleText"> <%= @articlecomment.email_address %> </p>
+
+      </div>
+    </div>
+
+    <div class="col-md-6 col-xs-6"> <!-- col-md-4 col-xs-8 -->
+
+  <div class="row">
+    <!-- Edit current article -->
+    <%= link_to 'Edit', edit_articlecomment_path(@articlecomment) %> |
+
+    <!-- Back to article list -->
+    <%= link_to 'Back', articlecomments_path %>
+  </div>
+</div>

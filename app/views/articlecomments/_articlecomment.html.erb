@@ -1,0 +1,22 @@
+<!-- ******************************************************************************************************** -->
+<!-- ARTICLE PARTIAL PAGE STARTS HERE                                                                 ******* -->
+<!-- ******************************************************************************************************** -->
+
+<!-- Show 4 products per line -->
+<div class="col-md-12 col-xs-12 articleRow"> <!-- col-md-4 col-xs-8 --> 
+  <h2 class="articleTitle"><%= articlecomment.article_id %></h2>
+  <h2 class="articleTitle"><%= articlecomment.comment %></h2>
+  <h5 class="articlePostedByInfo">Posted by: <%= articlecomment.posted_by %><span>  /  <%= articlecomment.posted_date %> </span></h5>
+  <h5 class="articlePostedByInfo">Email: <%= articlecomment.email_address %></h5>
+
+    <p class="productLinkButton"> 
+      <%= link_to articlecomment, class: "btn btn-default btn-circle" do %> 
+        <span class="glyphicon glyphicon-ok"></span> 
+      <% end %> 
+
+      <%= link_to articlecomment, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default btn-circle" do %>   <span class="glyphicon glyphicon-remove"></span> 
+      <% end %>   
+
+
+    </p>
+</div>

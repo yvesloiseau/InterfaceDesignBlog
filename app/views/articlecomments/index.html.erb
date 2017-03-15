@@ -1,0 +1,20 @@
+<!-- *********************************************************************************************************** -->
+<!-- ArticleComments INDEX PAGE STARTS HERE                                                               *******-->
+<!-- *********************************************************************************************************** -->
+
+<div class="container-fluid anchor_article" id="article">
+  <h1 class="h1Products">Articles Comments</h1>
+  <p id="notice"><%= notice %></p>
+
+<!-- Display the partial page here -->
+  <%= render partial: "articlecomment", collection: @articlecomments %>
+
+    <!-- Buttons to create a new product -->
+    <!-- Create a new product -->
+    <%= button_to "New article", new_articlecomment_path, class: 'btn btn-primary btn-sm inline', :method => :get %>
+
+    <!-- Go back -->
+    <%= button_to "Home", root_path, class: 'btn btn-primary btn-sm inline', :method => :get %>
+
+
+</div>

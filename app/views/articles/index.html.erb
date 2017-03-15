@@ -1,0 +1,34 @@
+<!-- ********************************************************************************************************* -->
+<!-- ARTICLES PAGE STARTS HERE                                                                         ******* -->
+<!-- ********************************************************************************************************* -->
+
+<div class="container-fluid anchor_article" id="article">
+  <div class="row">
+    <h1 class="h1Articles">My golf articles</h1>
+    <p id="notice"><%= notice %></p>
+
+    <% @number_of_articles = 0 %>
+    <% @article_product_id = 0 %>
+
+  <!-- Display the partial page here -->
+    <%= render partial: "article", collection: @articles.desc %>
+
+  </div>
+
+  <div class="row">
+    <div class="indexButtons">
+
+      <!-- Buttons to create a new product -->
+      <!-- Create a new product -->
+      <%= button_to "New article", new_article_path, class: 'btn btn-primary btn-sm inline articleButtons', :method => :get %>
+
+      <!-- Edit first product on the page -->
+      <%= button_to "Edit first", edit_article_path(@first_article_id), class: 'btn btn-primary btn-sm inline articleButtons', :method => :get %>
+
+      <!-- Go back -->
+      <%= button_to "Home", root_path, class: 'btn btn-primary btn-sm inline articleButtons', :method => :get %>
+
+    </div>
+  </div>
+</div>
+

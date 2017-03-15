@@ -1,0 +1,55 @@
+  <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+  <!-- Ajout d'une forme pour l'inscription de commentaires                                    %%%%%% -->
+  <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+
+<h3 class="inputForm">Complete the info to reply</h3>
+<!-- <form class"column" action=”/login” method=”post” > -->
+<%= form_for([@article, @article.comments.build]) do |f| %>
+
+  <!-- <fieldset> -->
+
+  <div class="form-group">
+
+    <p>
+    <%= f.label :"Your name", :class => 'formText'  %><br>
+    <%= f.text_field :posted_by %>
+    </p>
+    <!-- <input class="form-control input_YourName" name="thename" type=”text” id="thisIsMyName" placeholder="Your name here" required="required" size="35"> -->
+          <!-- <label for="email">Email:</label> -->
+
+    <p>
+    <%= f.label :"Your email address", :class => 'formText'  %><br>
+    <%= f.text_field :commenter_email %>
+    </p>
+
+    <p>
+    <%= f.label :"If any, enter an image or video url in addition to your comment", :class => 'formText' %><br>
+    <%= f.text_field :commenter_imageorvideo, :class => 'formField' %>
+    </p>
+    <!-- <input class="form-control input_YourEmail" name="theemail" type="email" id="email" placeholder="Your email here" required="required"> -->
+          <!-- <input class"radio" type="radio" name="gender" value="other"> Other<br><br> -->
+  </div>
+
+  <div class="form-Comments">
+    <p>
+    <%= f.label :"Your comment", :class => 'formText'  %>
+    <%= f.text_area(:aricle_comment, cols: 25, rows: 10, class: 'form_control') %>
+
+    </p>
+        <!-- <label for="Comm" class= "Comm">Your comments:</label> -->
+        <!-- <textarea class="form-control input_YourComm" name="comments" style="resize:none" cols="40" rows="10" id="Comm" placeholder="Your comments here" required="required"></textarea> -->
+
+
+        <!-- <textarea class=".message-box" name="comm2" cols="40" rows="5" id="comment2"></textarea> -->
+    <!-- </fieldset> -->
+    <!-- <input type="button" name="clear" value="Clear Form" onclick="clearForm(this.form);"> -->
+    <p>
+      <%= f.submit 'Add comment', :class => 'btn-primary inline'%>
+    
+    <!-- <button type="submit" class="btn btn-default but-send" id="mySubmitButton">Submit</button> -->
+    <input type="button" class="but-reset btn-primary inline" name="clear" value="Clear Form" class="clearForm" onclick="clearForm(this.form);">
+    <!-- <button class="btn btn-warning but-reset" onclick="clearForm(this.form0;">Reset</button> -->
+    <!-- </form> -->
+    </p>
+  </div>
+<% end %>
