@@ -19,12 +19,12 @@
 
     <p>
     <%= f.label :"Your email address", :class => 'formText'  %><br>
-    <%= f.text_field :commenter_email %>
+    <%= f.text_field :user_email %>
     </p>
 
     <p>
     <%= f.label :"If any, enter an image or video url in addition to your comment", :class => 'formText' %><br>
-    <%= f.text_field :commenter_imageorvideo, :class => 'formField' %>
+    <%= f.text_field :user_imageorvideo, :class => 'formField' %>
     </p>
     <!-- <input class="form-control input_YourEmail" name="theemail" type="email" id="email" placeholder="Your email here" required="required"> -->
           <!-- <input class"radio" type="radio" name="gender" value="other"> Other<br><br> -->
@@ -33,7 +33,7 @@
   <div class="form-Comments">
     <p>
     <%= f.label :"Your comment", :class => 'formText'  %>
-    <%= f.text_area(:aricle_comment, cols: 25, rows: 10, class: 'form_control') %>
+    <%= f.text_area(:article_comment, cols: 25, rows: 10, class: 'form_control') %>
 
     </p>
         <!-- <label for="Comm" class= "Comm">Your comments:</label> -->
