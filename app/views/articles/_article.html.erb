@@ -7,7 +7,7 @@
   <div class="row">
     <!-- <h2 class="articleID"><%= article.id %></h2>  -->
     <h2 class="articleTitle"><%= article.article_title %></h2> 
-      <h5 class="articlePostedByInfo">Posted by: <%= article.posted_by %><span>  /  <%= article.posted_date %> </span></h5>
+      <h5 class="articlePostedByInfo">Posted by: <%= article.posted_by %><span>  /  <%= article.created_at %> </span></h5>
 
     <div class="articleDetails"> 
       <p><%= image_tag(article.article_image, alt: "Edit Entry", class: "articleImage img-responsive")%></p> 
