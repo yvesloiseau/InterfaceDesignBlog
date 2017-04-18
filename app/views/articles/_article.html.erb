@@ -1,44 +1,43 @@
 <!-- ******************************************************************************************************** -->
-<!-- ARTICLES PARTIAL PAGE STARTS HERE                                                                 ******* -->
-<!-- ******************************************************************************************************** -->
-
-<!-- Show 2 products per line -->
-<div class="col-md-6 col-xs-12 articleRow"> <!-- col-md-6 col-xs-6 --> 
+<div class="col-md-6 col-xs-12 articleRow"> <!-- col-md-6 col-xs-6 -->
   <div class="row">
     <!-- <h2 class="articleID"><%= article.id %></h2>  -->
-    <h2 class="articleTitle"><%= article.article_title %></h2> 
+    <h2 class="articleTitle"><%= article.article_title %></h2>
       <h5 class="articlePostedByInfo">Posted by: <%= article.posted_by %><span>  /  <%= article.created_at %> </span></h5>
 
-    <div class="articleDetails"> 
-      <p><%= image_tag(article.article_image, alt: "Edit Entry", class: "articleImage img-responsive")%></p> 
+    <div class="articleDetails">
+      <p><%= image_tag(article.article_image, alt: "Edit Entry", class: "articleImage img-responsive")%></p>
 
-      <div class="textBox"> 
-        <p><%= article.article_text %></p> 
-        <% if @number_of_articles == 0 %> 
+      <div class="textBox">
+        <p><%= article.article_text %></p>
+        <% if @number_of_articles == 0 %>
           <% @first_article_id = article.id %>
         <% end %>
-      </div> 
-      <br> 
+      </div>
+      <br>
 
-      <p class="articleLinkButton"> 
-        <%= link_to article, class: "btn btn-default btn-circle" do %> 
-          <span class="glyphicon glyphicon-ok"></span> 
-        <% end %> 
-        <%= link_to edit_article_path(article), class: "btn btn-default btn-circle" do %> 
-          <span class="glyphicon glyphicon-edit"></span> 
-        <% end %> 
+      <p class="articleLinkButton">
+        <%= link_to article, class: "btn btn-default btn-circle" do %>
+          <span class="glyphicon glyphicon-ok"></span>
+        <% end %>
+        <%= link_to edit_article_path(article), class: "btn btn-default btn-circle" do %>
+          <span class="glyphicon glyphicon-edit"></span>
+        <% end %>
 
-        <%= link_to article, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default btn-circle" do %>   <span class="glyphicon glyphicon-remove"></span> 
-        <% end %> 
       </p>
 
       <div class="articleIndexButtons">
-    <!-- Edit first product on the page -->
-      <%= button_to "Read more", article_path(article), class: 'btn btn-primary btn-sm inline', :method => :get %>
-  <!-- TO BE REMOVE LATER -->
-      <%= button_to "Edit article", edit_article_path(article), class: 'btn btn-primary btn-sm inline', :method => :get %>
+        <%= button_to "Read more", article_path(article), class: 'btn btn-primary btn-sm inline', :method => :get %>
+
+        <!-- RESERVED FOR ADMIN USERS -->
+        <% if signed_in? && current_user.admin? %>
+         <%= button_to "Edit article", edit_article_path(article), class: 'btn btn-primary btn-sm inline', :method => :get %>
+
+          <%= link_to article, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default btn-circle inline" do %>   <span class="glyphicon glyphicon-remove"></span>
+          <% end %>
+        <% end %>
       </div>
 
     </div>
   </div>
-</div> 
+</div>

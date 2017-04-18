@@ -4,7 +4,7 @@
 
 div.col-md-6.col-xs-6.commentsForm {
 	height: auto;
-}	
+}
 
 
 .youtube_video {
@@ -23,10 +23,10 @@ div.col-md-6.col-xs-6.commentsForm {
 	apdding-left: 15px;
 }
 
-.commentsForm {	
+.commentsForm {
 	position: fixed;
 	width: 30%;
-	top: 7.5em;
+	top: 8.5em;
 	left: 53%;
 	border-style: solid;
   border-width: 1px;
@@ -55,6 +55,20 @@ div.col-md-6.col-xs-6.commentsForm {
 	margin: 0;
 }
 
+.reviewHeaders, .ratings {
+  color: #3366cc;
+  width: 600px;
+  padding-left: 20px;
+    border-style: solid;
+  border-width: 1px;
+  border-color: grey;
+}
+
+.add_comments {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 /*****************************************************/
 /*  Max-width = 1040px                               */
 /*****************************************************/
@@ -65,7 +79,7 @@ div.col-md-6.col-xs-6.commentsForm {
 		top: 0;
 		left: 0;
 		clear: both;
-		}	
+		}
 }
 
 /*****************************************************/
@@ -78,5 +92,5 @@ div.col-md-6.col-xs-6.commentsForm {
 		top: 0;
 		left: 0;
 		clear: both;
-		}	
+		}
 }

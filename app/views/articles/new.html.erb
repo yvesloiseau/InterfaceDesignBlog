@@ -1,5 +1,27 @@
-<h1>New Article</h1>
+<!-- *********************************************************************** -->
+<div class="container-fluid anchor_new" id="new">
+  <div class="row">
+    <div class="col-md-6 col-xs-6"> <!-- col-md-4 col-xs-8 -->
+      <div class="newArticle">
 
-<%= render 'form', article: @article %>
+        <h1>Create a new article</h1>
 
-<%= link_to 'Back', articles_path %>
+        <%= render 'form', article: @article %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6 col-xs-6"> <!-- col-md-4 col-xs-8 -->
+
+      <div class="newButton">
+        <!-- Buttons to create a new product -->
+        <!-- Back to Product list -->
+        <%= button_to "Back", articles_path, class: 'btn btn-primary btn-sm inline', :method => :get %>
+
+        <!-- Go back HOME-->
+        <%= button_to "Home", root_path, class: 'btn btn-primary btn-sm inline', :method => :get %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,8 +1,7 @@
-<!-- ********************************************************************************************************* -->
-<!-- SHOW ARTICLES PAGE STARTS HERE                                                                    ******* -->
-<!-- ********************************************************************************************************* -->
+<!-- ********************************************************************** -->
 <div class="container-fluid anchor_show" id="show">
   <div class="row articleFeatures">
+
     <p id="notice"><%= notice %></p>
 
     <h2 class="articleTitle"> <%= @article.article_title %></h2>
@@ -17,7 +16,7 @@
         </h2>
         <p class="articleText"> <%= @article.article_text %> </p>
 
-        <p><%= image_tag(@article.article_image, alt: "Edit Entry", class: "showArticleImage img-responsive")%></p> 
+        <p><%= image_tag(@article.article_image, alt: "Edit Entry", class: "showArticleImage img-responsive")%></p>
 
         <% if @article.article_video.include? "embed" %>
           <p class="youtube_video">
@@ -25,7 +24,7 @@
           </p>
 
         <% elsif @article.article_video.include? "jpg" %>
-          <p><%= image_tag(@article.article_video, alt: "Edit Entry", class: "showArticleVideo img-responsive")%></p> 
+          <p><%= image_tag(@article.article_video, alt: "Edit Entry", class: "showArticleVideo img-responsive")%></p>
         <% else %>
           <p class="articleText"> <%= @article.article_text %> </p>
         <% end %>
@@ -40,9 +39,15 @@
     </div>
   </div>
 
+<%= @article.most_recent_comment %>
   <!-- Show Article Comments -->
   <!-- Display the partial page here -->
-   <%= render @article.comments.desc %> 
+  <% if @article.most_recent_comment != nil %>
+
+   <%= render @article.comments.desc %>
+  <% else %>
+    <h3 class="reviewHeaders noReviews">  Be the first to review this product  &rarr;</h3>
+  <% end %>
 
 
   <div class="row">
@@ -52,7 +57,7 @@
       <%= button_to "Blog", root_path, class: 'btn btn-primary btn-sm inline articleButtons', :method => :get %>
 
       <!-- Go to Articles list -->
-      <%= button_to "Articles", article_path, class: 'btn btn-primary btn-sm inline articleButtons', :method => :get %>
+      <%= button_to "Articles", articles_path, class: 'btn btn-primary btn-sm inline articleButtons', :method => :get %>
 
     </div>
   </div>

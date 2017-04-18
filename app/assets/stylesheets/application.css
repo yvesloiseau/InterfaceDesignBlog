@@ -10,12 +10,13 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
-  	*= require 'scaffolds.scss'
-  	*= require_self
-  	*= require 'my_blog.scss'
-  	*= require 'articles.scss'
-  	*= require 'comments.scss'  	
- 	*= require_tree .
+    *= require 'scaffolds.scss'
+    *= require_self
+    *= require 'my_blog.scss'
+    *= require 'articles.scss'
+    *= require 'comments.scss'
+    *= require 'users.scss'
+  *= require_tree .
  */
 
 .container-fluid {
@@ -98,6 +99,11 @@ ul.social-links {
 	padding: 0;
 }
 
+.alert {
+  margin-top: 80px;
+  margin-bottom: 5px;
+}
+
 /*/ ******************************************************
 // *  Topographic rules                                 *
 // ******************************************************/
@@ -125,8 +131,18 @@ h1,h2 {
 	color: #5535D2; /*  #1158dc;*/
 }
 
+h3 {
+  color: blue;
+}
+
 p {
 	font-size: 14px;
+}
+
+.formField {
+  border-style: solid;
+  border-width: 1px;
+  border-color: grey;
 }
 
 footer,
@@ -139,5 +155,12 @@ footer a {
 }
 
 footer {
-  background-color: #9d9d9d;  /*#264553; grey;  #101010; #809af3;*/ 
+  background-color: #9d9d9d;  /*#264553; grey;  #101010; #809af3;*/
 }
+
+.alert {
+  font-size: 20px;
+  font-weight: 900;
+  color: red;
+}
+

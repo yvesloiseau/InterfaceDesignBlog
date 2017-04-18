@@ -4,12 +4,25 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.all
+    # @articles = Article.all
+    if params[:q]
+      search_term = params[:q]
+      @articles = Article.search(search_term)
+      #@articles = Article.search(search_term).paginate(page: params[:page], per_page: 4)
+    else
+      @articles = Article.all
+      #@articles = Article.all.paginate(page: params[:page], per_page: 4)
+    end
+
   end
 
   # GET /articles/1
   # GET /articles/1.json
   def show
+    @articleFirst = @article.comments.desc.first
+    @comments = @article.comments.order("created_at DESC")
+    @comment = @article.comments.build
+
   end
 
   # GET /articles/new

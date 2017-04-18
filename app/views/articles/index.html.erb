@@ -17,13 +17,12 @@
 
   <div class="row">
     <div class="indexButtons">
+      <% if signed_in? && current_user.admin? %>
 
-      <!-- Buttons to create a new product -->
-      <!-- Create a new product -->
-      <%= button_to "New article", new_article_path, class: 'btn btn-primary btn-sm inline articleButtons', :method => :get %>
+        <!-- Create a new article -->
+        <%= button_to "New article", new_article_path, class: 'btn btn-primary btn-sm inline articleButtons', :method => :get %>
 
-      <!-- Edit first product on the page -->
-      <%= button_to "Edit first", edit_article_path(@first_article_id), class: 'btn btn-primary btn-sm inline articleButtons', :method => :get %>
+        <% end %>
 
       <!-- Go back -->
       <%= button_to "Home", root_path, class: 'btn btn-primary btn-sm inline articleButtons', :method => :get %>

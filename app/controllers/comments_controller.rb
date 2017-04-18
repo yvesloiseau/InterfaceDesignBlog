@@ -1,10 +1,29 @@
 class CommentsController < ApplicationController
   def create
     @article = Article.find(params[:article_id])
-    @comment = @article.comments.create(comment_params)
-    redirect_to article_path(@article)
+    @comment = @article.comments.new(comment_params)
+    @comment.user = current_user
+    @comment.save
+
+    # Validations  (Need to add validations for individual fields on the profile)
+    respond_to do |format|
+
+      if @comment.save
+        format.html { redirect_to article_path(@article), notice: 'Review was created successfully.' }
+        format.json { render :show, status: :created, location: @article }
+      else
+        format.html { render 'articles/show' }
+        format.json { render json: @comment.errors, status: :unprocessable_entity }
+      end
+    end
+
   end
- 
+
+  def new
+   @article = Article.find(params[:article_id])
+   @comment = @article.comments.new(comment_params)
+  end
+
 	def destroy
     @article = Article.find(params[:article_id])
     @comment = @article.comments.find(params[:id])

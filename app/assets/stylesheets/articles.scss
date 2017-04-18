@@ -2,18 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.anchor_article {
-  padding-top: 60px;
-	}
-
+.anchor_article,
 .anchor_show {
-  padding-top: 60px;
+  padding-top: 70px;
 	}
 
-.anchor_edit {
-  padding-top: 90px;
-	}
-
+.anchor_edit,
 .anchor_new {
   padding-top: 90px;
 	}
@@ -30,19 +24,23 @@ div#show.container-fluid.anchor_show {
   height: auto;
   max-width: 100%;
   max-height: 100%;
-	}	
+	}
 
 div#edit.container-fluid.anchor_edit {
   height: 675px;
   max-width: 100%;
   max-height: 100%;
-	}	
+	}
 
 div#new.container-fluid.anchor_new {
   height: 800px;
   max-width: 100%;
   max-height: 100%;
-	}	
+	}
+
+div.newArticle {
+	padding-left: 25px;
+}
 
 
 .articleFeatures {
@@ -109,7 +107,7 @@ div.articleDetails {
 	margin-top: 10px;
 	margin-bottom: 10px;
 	font-size: 14px;
-}	
+}
 
 .articleRow {
 //	border-style: solid;
@@ -186,7 +184,7 @@ div.articleFields {
 
 textarea#product_description {
 	width:  50%;          //34.72222222%;					// 500px;
-	height: 7.142857143em;  // 200px / 16px = 
+	height: 7.142857143em;  // 200px / 16px =
 	//height: auto;
 }
 
@@ -259,6 +257,23 @@ th.productActionsRemove {
 	padding-bottom: 33px;
 }
 
+.searchField {
+	color: #b2d235;
+	width: 175px;
+	line-height: 10px;
+  font-size: .75em;
+  border-style: solid;
+	border-width: 1.5px;
+	border-color: #264553;
+	//height: auto;
+}
+
+.searchSubmit {
+	background-color: #264553; //#337ab7;
+	color: #b2d235;
+	margin-left: 5px;
+}
+
 // ******************************************************
 // *  Form styling rules                                *
 // ******************************************************
@@ -273,7 +288,7 @@ th.productActionsRemove {
 }
 
 .forme {
-  padding-left: 3.4%; 
+  padding-left: 3.4%;
   /*padding-left: 50px;*/
   margin-top: 11%;  /*190px;*/
 }
@@ -309,7 +324,7 @@ div.actions input {
   background-color: #337ab7;
   color: #fff;
   border: none;
-	
+
 }
 
 .actions:hover,  div.actions input:hover {
@@ -396,18 +411,18 @@ div.textBox {
 	}
 
 	div#show.container-fluid.anchor_show {
-		}	
+		}
 
 	div#edit.container-fluid.anchor_edit {
-		}	
+		}
 
 	div#new.container-fluid.anchor_new {
-		}	
+		}
 
 	div.col-md-6.col-xs-6.commentsForm {
 		position: relative;
 		clear: both;
-		}	
+		}
 
 	.fullBagImage {
 		width: 80%; // 450px;
@@ -460,17 +475,17 @@ div.textBox {
 	div#show.container-fluid.anchor_show {
 	  max-width: 100%;
 	  max-height: 100%;
-		}	
+		}
 
 	div#edit.container-fluid.anchor_edit {
 	  max-width: 100%;
 	  max-height: 100%;
-		}	
+		}
 
 	div#new.container-fluid.anchor_new {
 	  max-width: 100%;
 	  max-height: 100%;
-		}	
+		}
 
 	.fullBagImage {
 		width: 85%; // 450px;
@@ -480,7 +495,7 @@ div.textBox {
 	.bagImage {
 		width: 85%; // 300px;
 		height: 30em;
-	}	
+	}
 
 div.textBox {
 	height: 10.71428571em; // 150px;
@@ -525,17 +540,17 @@ div.textBox {
 	div#show.container-fluid.anchor_show {
 	  max-width: 100%;
 	  max-height: 100%;
-		}	
+		}
 
 	div#edit.container-fluid.anchor_edit {
 	  max-width: 100%;
 	  max-height: 100%;
-		}	
+		}
 
 	div#new.container-fluid.anchor_new {
 	  max-width: 100%;
 	  max-height: 100%;
-		}	
+		}
 
 	.fullBagImage {
 		width: 87.5%; // 450px;
@@ -596,17 +611,17 @@ div.textBox {
 	div#show.container-fluid.anchor_show {
 	  max-width: 100%;
 	  max-height: 100%;
-		}	
+		}
 
 	div#edit.container-fluid.anchor_edit {
 	  max-width: 100%;
 	  max-height: 100%;
-		}	
+		}
 
 	div#new.container-fluid.anchor_new {
 	  max-width: 100%;
 	  max-height: 100%;
-		}	
+		}
 
 	.fullBagImage {
 		width: 90%; // 450px;
@@ -682,17 +697,17 @@ div.textBox {
 	div#show.container-fluid.anchor_show {
 	  max-width: 100%;
 	  max-height: 100%;
-		}	
+		}
 
 	div#edit.container-fluid.anchor_edit {
 	  max-width: 100%;
 	  max-height: 100%;
-		}	
+		}
 
 	div#new.container-fluid.anchor_new {
 	  max-width: 100%;
 	  max-height: 100%;
-		}	
+		}
 
   footer {
     max-height: 100%;
