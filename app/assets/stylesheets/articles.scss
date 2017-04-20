@@ -134,6 +134,12 @@ label {
 	font-weight: 900;
 }
 
+label {
+	margin-top: 10px;
+	font-size: 2em;
+}
+
+
 p.link_to, form.button_to, .inline, btn-primary {
 	display: inline;
 }
@@ -268,11 +274,12 @@ th.productActionsRemove {
 	//height: auto;
 }
 
-.searchSubmit {
-	background-color: #264553; //#337ab7;
-	color: #b2d235;
-	margin-left: 5px;
+text_field, textarea, input {
+	color: #264553;
+	font-size: 1.25em;
+	padding-left: 5px;
 }
+
 
 // ******************************************************
 // *  Form styling rules                                *

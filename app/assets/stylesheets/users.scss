@@ -39,6 +39,10 @@ div#user.container-fluid.anchor_user {
   padding-top: 80px;
   }
 
+.anchorShow {
+  padding-top: 90px;
+}
+
 div#edit.container-fluid.anchor_userProfile {
   height: 675px;
 //  height: auto;
@@ -60,6 +64,7 @@ div#new.container-fluid.password_new
   border-color: #3399FF;
   background-color: #EEEEEE;
   }
+
 
 div#new.container-fluid.password_new {
   width: 375px;
@@ -105,6 +110,11 @@ div#new.container-fluid.password_new {
   height:auto;
   padding-left: 10px;
   color: white;
+}
+
+.actions {
+  margin-top: 10px;
+  margin-bottom: 5px;
 }
 
 h1,h2 {
