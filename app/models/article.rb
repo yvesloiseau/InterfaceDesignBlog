@@ -1,6 +1,6 @@
 class Article < ApplicationRecord
-    has_many :user
-   has_many :comments, dependent: :destroy
+  has_many :user
+  has_many :comments, dependent: :destroy
 
  # Validations
   #validates :user, presence: true

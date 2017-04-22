@@ -4,14 +4,21 @@
 
 <div class="container-fluid anchor_article" id="article">
   <div class="row">
+    <h4 id="notice"><%= notice %></h4>
+
     <h1 class="h1Articles">My golf articles</h1>
-    <p id="notice"><%= notice %></p>
 
     <% @number_of_articles = 0 %>
     <% @article_product_id = 0 %>
 
   <!-- Display the partial page here -->
     <%= render partial: "article", collection: @articles.desc %>
+   </div>
+   <div class="row">
+    <div class="new_pagination">
+      <%= will_paginate @articles, :class => 'flickr_pagination' %>
+    </div>
+
 
   </div>
 

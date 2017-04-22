@@ -80,7 +80,9 @@
 
    <!-- Flash to display a notice to users or any alerts -->
   <% if notice %>
-    <p class="notice"><%= notice %></p>
+    <div id="notice_area">
+      <p class="notice"><%= notice %></p>
+    </div>
   <% end %>
   <% if alert %>
     <div id="alert-area">

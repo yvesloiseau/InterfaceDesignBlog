@@ -19,6 +19,8 @@ Rails.application.routes.draw do
 	get 'articles/index'
 	get 'comments/index'
 
+  post 'comments/update'
+
   post 'my_blog/thank_you'
 
   root 'my_blog#index'

@@ -4,17 +4,22 @@ class ArticlesController < ApplicationController
   # Load authorizaton rules for articles
   load_and_authorize_resource
 
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to articles_path, :alert => exception.message
+    end
+
   # GET /articles
   # GET /articles.json
   def index
     # @articles = Article.all
     if params[:q]
       search_term = params[:q]
-      @articles = Article.search(search_term)
-      #@articles = Article.search(search_term).paginate(page: params[:page], per_page: 4)
+      #@articles = Article.search(search_term)
+      @articles = Article.search(search_term).paginate(page: params[:page], per_page: 2)
     else
-      @articles = Article.all
+      #@articles = Article.all
       #@articles = Article.all.paginate(page: params[:page], per_page: 4)
+      @articles = Article.all.paginate(page: params[:page], per_page: 2)
     end
 
   end
@@ -23,8 +28,10 @@ class ArticlesController < ApplicationController
   # GET /articles/1.json
   def show
     @articleFirst = @article.comments.desc.first
-    @comments = @article.comments.order("created_at DESC")
+    #@comments = @article.comments.order("created_at DESC")
+    @comments = @article.comments.order("created_at DESC").paginate(page: params[:page], per_page: 1)
     @comment = @article.comments.build
+    @valid_comments = 0
 
   end
 
@@ -78,13 +85,21 @@ class ArticlesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_article
-      @article = Article.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def article_params
-      params.require(:article).permit(:article_title, :article_text, :posted_by, :posted_date, :article_image, :article_video, :article_details)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_article
+    @article = Article.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def article_params
+    params.require(:article).permit(:article_title, :article_text, :posted_by, :posted_date, :article_image, :article_video, :article_details)
+  end
+
+  def save_my_previous_url
+    session[:my_previous_url] = URI(request.referer || '').path
+    @back_url = session[:my_previous_url]
+    session[:previous_url] = @back_url
+  end
+
 end

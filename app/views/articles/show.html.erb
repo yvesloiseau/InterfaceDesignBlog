@@ -39,12 +39,15 @@
     </div>
   </div>
 
-<%= @article.most_recent_comment %>
   <!-- Show Article Comments -->
-  <!-- Display the partial page here -->
   <% if @article.most_recent_comment != nil %>
 
-   <%= render @article.comments.desc %>
+    <%= render @comments %>
+   <% if @valid_comments > 0 %>
+    <div class="col-md-6 col-xs-6"> <!-- col-md-4 col-xs-8 -->
+      <%= will_paginate @comments, :class => 'flickr_pagination' %>
+    </div>
+<% end %>
   <% else %>
     <h3 class="reviewHeaders noReviews">  Be the first to review this product  &rarr;</h3>
   <% end %>
@@ -56,7 +59,9 @@
       <!-- Go to BLOG Index page -->
       <%= button_to "Blog", root_path, class: 'btn btn-primary btn-sm inline articleButtons', :method => :get %>
 
-      <!-- Go to Articles list -->
+      <!-- Go to Articles list --><!-- Re-direct the user from where he came from -->
+      <%= button_to "Back", session[:previous_url], class: 'btn btn-primary btn-sm inline articleButtons', :method => :get  %>
+
       <%= button_to "Articles", articles_path, class: 'btn btn-primary btn-sm inline articleButtons', :method => :get %>
 
     </div>

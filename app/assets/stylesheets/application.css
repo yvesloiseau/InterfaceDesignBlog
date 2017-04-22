@@ -104,6 +104,11 @@ ul.social-links {
   margin-bottom: 5px;
 }
 
+.notice_area {
+  margin-top: 80px;
+  margin-bottom: 5px;
+}
+
 /*/ ******************************************************
 // *  Topographic rules                                 *
 // ******************************************************/
@@ -128,11 +133,11 @@ h2,
 h3 { font-family: Futura, Helvetica, Arial, sans-serif; }
 
 h1,h2 {
-	color: #5535D2; /*  #1158dc;*/
+	color: #3366cc; //#5535D2; /*  #1158dc;*/
 }
 
 h3 {
-  color: blue;
+  color: #3399ff; //blue;
 }
 
 p {

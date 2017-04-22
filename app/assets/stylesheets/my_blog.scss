@@ -51,9 +51,6 @@ p, ol, ul, td {
   margin:0;
 }
 
-.enterBlogButton {
-  color: #254451;
-}
 .aboutTools {
   width: 90%;
   height: auto;
@@ -71,7 +68,7 @@ p, ol, ul, td {
 
 .about_page_indent {
   padding-left: 15px;
-  width: 50%;
+  width: 100%;
   height: auto;
 
 }
@@ -82,7 +79,7 @@ p, ol, ul, td {
   height: auto;
 }
 
-.contact_Email  {
+.contact_phone  {
 //  display: inline-block;
   width: 100%; // 34.72222222%;  // 500px;
   height: auto;
@@ -98,8 +95,17 @@ p, ol, ul, td {
   height: auto;
 }
 
+.feedback_message {
+  width: 100%;  // 55.55555556%;  // 800px;
+  height: auto;
+}
+
 .contact_Page_Indent {
-  padding-left: 15px;
+  padding-left: 5px;
+}
+
+.other_work {
+  padding-left:15px;
 }
 
 .rwd-line {
@@ -162,12 +168,34 @@ div#contactus.container-fluid.anchor_contact {
 .thankyouButton {
   margin-left: 10px;
 }
+
+// ******************************************************
+// *  Topographic rules                                 *
+// ******************************************************
+
+.myBackground h4,
+ .contact_Page_Indent h4,
+ .contact_email  h4,
+ .contact_phone h4 {
+  color: #264553;
+}
+
+.enterBlogButton h3 {
+  color:  #333399; //#254451;
+}
+
 .golfBlog {
-  color: #5535D2; //blue; //#254451;
+  color: #264553; // #5535D2; //blue; //#254451;
 }
 
 .golfBlogTitle {
 
+}
+
+.aboutTools h3,
+.aboutRubyandRails h3,
+.moreInfoAbout h3 {
+  color: #333399;
 }
 
 /*****************************************************/
