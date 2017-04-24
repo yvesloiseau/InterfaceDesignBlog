@@ -141,7 +141,7 @@ h3 {
 }
 
 p {
-	font-size: 14px;
+	font-size: 1.15em; /*14px;*/
 }
 
 .formField {

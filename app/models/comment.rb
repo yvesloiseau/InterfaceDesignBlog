@@ -10,5 +10,5 @@ class Comment < ApplicationRecord
 
   # Scopes
   scope :desc , -> { order("created_at desc") }
-
+  scope :approved_comments, -> { where(approved: true).order("created_at desc")  }
 end

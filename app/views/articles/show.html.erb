@@ -8,7 +8,7 @@
     <h5 class="articlePostedByInfo">Posted by: <%= @article.posted_by %><span>  /  <%= @article.posted_date %> </span></h5>
 
     <!-- Display article content -->
-    <div class="col-md-6 col-xs-6"> <!-- col-md-6 col-xs-6 -->
+    <div class="col-md-6 col-xs-12"> <!-- col-md-6 col-xs-6 -->
       <div class="productFields">
 
         <h2>
@@ -16,15 +16,21 @@
         </h2>
         <p class="articleText"> <%= @article.article_text %> </p>
 
-        <p><%= image_tag(@article.article_image, alt: "Edit Entry", class: "showArticleImage img-responsive")%></p>
+        <p><%= image_tag(@article.article_image, alt: "Edit Entry",
+          class: "showArticleImage img-responsive")%>
+        </p>
 
         <% if @article.article_video.include? "embed" %>
           <p class="youtube_video">
-            <iframe class= "youtubeVideo" src="<%=@article.article_video %>" frameborder="0" allowfullscreen></iframe>
+            <iframe class= "youtubeVideo" src="<%=@article.article_video %>"
+            frameborder="0" allowfullscreen>
+            </iframe>
           </p>
 
         <% elsif @article.article_video.include? "jpg" %>
-          <p><%= image_tag(@article.article_video, alt: "Edit Entry", class: "showArticleVideo img-responsive")%></p>
+          <p><%= image_tag(@article.article_video, alt: "Edit Entry",
+            class: "showArticleVideo img-responsive")%>
+          </p>
         <% else %>
           <p class="articleText"> <%= @article.article_text %> </p>
         <% end %>
@@ -44,7 +50,7 @@
 
     <%= render @comments %>
    <% if @valid_comments > 0 %>
-    <div class="col-md-6 col-xs-6"> <!-- col-md-4 col-xs-8 -->
+    <div class="col-md-6 col-xs-12"> <!-- col-md-4 col-xs-8 -->
       <%= will_paginate @comments, :class => 'flickr_pagination' %>
     </div>
 <% end %>
@@ -59,9 +65,10 @@
       <!-- Go to BLOG Index page -->
       <%= button_to "Blog", root_path, class: 'btn btn-primary btn-sm inline articleButtons', :method => :get %>
 
-      <!-- Go to Articles list --><!-- Re-direct the user from where he came from -->
+      <!-- Re-direct the user from where he came from -->
       <%= button_to "Back", session[:previous_url], class: 'btn btn-primary btn-sm inline articleButtons', :method => :get  %>
 
+      <!-- Go to Articles list -->
       <%= button_to "Articles", articles_path, class: 'btn btn-primary btn-sm inline articleButtons', :method => :get %>
 
     </div>

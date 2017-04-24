@@ -29,7 +29,12 @@ class ArticlesController < ApplicationController
   def show
     @articleFirst = @article.comments.desc.first
     #@comments = @article.comments.order("created_at DESC")
-    @comments = @article.comments.order("created_at DESC").paginate(page: params[:page], per_page: 1)
+    if signed_in? and current_user.admin?
+        @comments = @article.comments.order("created_at DESC").paginate(page: params[:page], per_page: 1)
+    else
+        @comments = @article.comments.approved_comments.paginate(page: params[:page], per_page: 1)
+    end
+
     @comment = @article.comments.build
     @valid_comments = 0
 

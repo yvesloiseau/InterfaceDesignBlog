@@ -24,15 +24,14 @@
 
   <div class="row">
     <div class="indexButtons">
-      <% if signed_in? && current_user.admin? %>
-
-        <!-- Create a new article -->
-        <%= button_to "New article", new_article_path, class: 'btn btn-primary btn-sm inline articleButtons', :method => :get %>
-
-        <% end %>
 
       <!-- Go back -->
       <%= button_to "Home", root_path, class: 'btn btn-primary btn-sm inline articleButtons', :method => :get %>
+
+      <% if signed_in? && current_user.admin? %>
+        <!-- Create a new article -->
+        <%= button_to "New article", new_article_path, class: 'btn btn-primary btn-sm inline articleButtons', :method => :get %>
+        <% end %>
 
     </div>
   </div>

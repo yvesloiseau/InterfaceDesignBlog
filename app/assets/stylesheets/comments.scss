@@ -35,6 +35,7 @@ div.col-md-6.col-xs-6.commentsForm {
 
 
 .commentRow {
+  width: 90%;
 	border-style: solid;
 	border-width: 1px;
 	border-color: grey;
@@ -44,17 +45,51 @@ div.col-md-6.col-xs-6.commentsForm {
 }
 
 .commentButtons {
-	background-color: green; // #9d9d9d;
+	//background-color: green; // #9d9d9d;
+}
+
+.remove_comment {
+  color: white;
+  background-color: blue;
 }
 
 .formText {
 	margin-top: 10px;
+  font-size: 1.25em;
 }
 
 .formField {
 	margin: 0;
 }
 
+.approve_fields {
+  width: 50%;
+  display: inline;
+}
+
+.update_comments {
+  width: 40%;
+  display: inline;
+}
+
+.check_box {
+  background-color: #fafafa;
+  border: 1.5px solid #cacece;
+  //box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
+  padding-left: 12px;
+  padding-top: 12px;
+  border-radius: 3px;
+  display: inline;
+  position: relative;
+  width: 1.5em;
+  height: 1.5em;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.approved_label {
+  margin-top: 4px;
+}
 .reviewHeaders, .ratings {
   color: #3366cc;
   width: 600px;
@@ -68,6 +103,119 @@ div.col-md-6.col-xs-6.commentsForm {
   margin-top: 10px;
   margin-bottom: 10px;
 }
+
+.comments_update {
+  margin-bottom: 10px;
+}
+
+//.form_comment_update {
+  //width: 50%;
+  //display: inline;
+  //margin-bottom: 10px;
+//}
+
+form.form.comment_update {
+  width: 50%;
+  display: inline;
+}
+
+/*****************************************************/
+/*  CHECK BOX FORMATTING
+/*****************************************************/
+/* $activeColor: #c0392b; //red */
+$activeColor: #27ae60; //green
+$darkenColor: darken($activeColor, 20%);
+/* $background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/13460/dark_wall.png'); */
+$background: #3498db;
+
+/* .roundedOne */
+.roundedOne {
+  width: 28px;
+  height: 28px;
+  position: relative;
+  margin: 20px auto;
+  background: #fcfff4;
+  background: linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+  border-radius: 50px;
+  box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
+  label {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    position: absolute;
+    left: 4px;
+    top: 4px;
+    background: linear-gradient(top, #222 0%, #45484d 100%);
+    border-radius: 50px;
+    box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,1);
+    &:after {
+      content: '';
+      width: 16px;
+      height: 16px;
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      background: $activeColor;
+      background: linear-gradient(top, $activeColor 0%, $darkenColor 100%);
+      opacity: 0;
+      border-radius: 50px;
+      box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
+    }
+    &:hover::after {
+      opacity: 0.3;
+    }
+  }
+  input[type=checkbox] {
+    visibility: hidden;
+    &:checked + label:after {
+      opacity: 1;
+    }
+  }
+}
+/* end .roundedOne */
+
+/* .squaredFour */
+.squaredFour {
+  width: 20px;
+  position: relative;
+  margin: 20px auto;
+  label {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #fcfff4;
+    background: linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+    border-radius: 4px;
+    box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
+    &:after {
+      content: '';
+      width: 9px;
+      height: 5px;
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      border: 3px solid #333;
+      border-top: none;
+      border-right: none;
+      background: transparent;
+      opacity: 0;
+      transform: rotate(-45deg);
+    }
+    &:hover::after {
+      opacity: 0.5;
+    }
+  }
+  input[type=checkbox] {
+    visibility: hidden;
+    &:checked + label:after {
+      opacity: 1;
+    }
+  }
+}
+/* end .squaredFour */
 
 /*****************************************************/
 /*  Max-width = 1040px                               */

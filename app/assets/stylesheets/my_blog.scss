@@ -27,6 +27,12 @@ p, ol, ul, td {
   margin-right: auto;
 }
 
+.img-about {
+  border-radius: 50%;
+  width: 25%; // 300px;
+  height: 30.5em;
+}
+
 .center {
 	margin-right: auto;
 	margin-left: auto;
@@ -109,7 +115,11 @@ p, ol, ul, td {
 }
 
 .rwd-line {
-  display: block;
+  display: inline; //block;
+}
+
+.form.form_contact_form {
+  width:80%;
 }
 
 // ******************************************************
@@ -169,6 +179,14 @@ div#contactus.container-fluid.anchor_contact {
   margin-left: 10px;
 }
 
+.thank_you {
+  padding-left: 0;
+}
+
+.myBackground p {
+  padding-left: 5px;
+}
+
 // ******************************************************
 // *  Topographic rules                                 *
 // ******************************************************
@@ -178,6 +196,18 @@ div#contactus.container-fluid.anchor_contact {
  .contact_email  h4,
  .contact_phone h4 {
   color: #264553;
+}
+
+.myBackground p {
+  font-size: 1.40em;
+}
+
+.other_work  {
+  font-size: 1.50em;
+}
+
+.thank_you {
+  //font-size: 1.50em;
 }
 
 .enterBlogButton h3 {

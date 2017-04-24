@@ -17,27 +17,31 @@
       <br>
 
       <p class="articleLinkButton">
-        <%= link_to article, class: "btn btn-default btn-circle" do %>
-          <span class="glyphicon glyphicon-ok"></span>
-        <% end %>
-        <%= link_to edit_article_path(article), class: "btn btn-default btn-circle" do %>
-          <span class="glyphicon glyphicon-edit"></span>
+
+        <!-- RESERVED FOR ADMIN USERS -->
+        <% if signed_in? && current_user.admin? %>
+
+          <%= link_to article, class: "btn btn-default btn-circle" do %>
+            <span class="glyphicon glyphicon-ok"></span>
+          <% end %>
+
+          <%= link_to edit_article_path(article), class: "btn btn-default btn-circle" do %>
+            <span class="glyphicon glyphicon-edit"></span>
+          <% end %>
+
+          <%= link_to article, method: :delete, data: { confirm: 'Are you sure?' },
+          class: "btn btn-default btn-circle" do %>
+          <span class="glyphicon glyphicon-remove"></span>
+            <% end %>
+
         <% end %>
 
       </p>
 
       <div class="articleIndexButtons">
-        <%= button_to "Read more", article_path(article), class: 'btn btn-primary btn-sm inline', :method => :get %>
-
-        <!-- RESERVED FOR ADMIN USERS -->
-        <% if signed_in? && current_user.admin? %>
-         <%= button_to "Edit article", edit_article_path(article), class: 'btn btn-primary btn-sm inline', :method => :get %>
-
-          <%= link_to article, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default btn-circle inline" do %>   <span class="glyphicon glyphicon-remove"></span>
-          <% end %>
-        <% end %>
+        <%= button_to "Read more", article_path(article),
+        class: 'btn btn-primary btn-sm inline', :method => :get %>
       </div>
-
     </div>
   </div>
 </div>

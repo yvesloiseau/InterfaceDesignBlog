@@ -64,8 +64,8 @@ h2.articleTitle {
 }
 
 .showArticleImage {
-	width: 55%; // 300px;
-	height: 17em;
+	width: 77%; // 300px;
+	height: auto; //height: 17em;
 //	margin-left: auto;
 //	margin-right: auto;
 	margin-left: 15px;
@@ -74,7 +74,7 @@ h2.articleTitle {
 
 .showArticleVideo {
 	width: 55%; // 300px;
-	height: 20em;
+	height: auto; //height: 20em;
 //	margin-left: auto;
 //	margin-right: auto;
 	margin-left: 15px;
@@ -82,11 +82,9 @@ h2.articleTitle {
 }
 
 div.textBox {
-	height: 15em; // 150px;
+//	height: 15em; // 150px;
 	height: auto;
-//	height: 10.71428571em; // 150px;
-//	max-width: 100%;
-	max-width: 70%;
+	max-width: 60%;
 	margin-left: 15px;
 	margin-top: 10px;
 	font-size: 12px;
@@ -150,7 +148,7 @@ div.articleFields {
 
 
 .articleLinkButton {
-	width: 35%;
+	width: 50%;
 	margin-left:auto;
 	margin-right: auto;
 	margin-bottom: 20px;
@@ -553,7 +551,7 @@ div.textBox {
 	}
 
 div.textBox {
-	height: 10.71428571em; // 150px;
+	//height: 10.71428571em; // 150px;
 	margin-top: 10px;
 }
 
@@ -618,7 +616,7 @@ div.textBox {
 	}
 
 	div.textBox {
-		height: 13em; // 150px;
+		//height: 13em; // 150px;
 		margin-top: 10px;
 	}
 
@@ -697,7 +695,7 @@ div.textBox {
 }
 
 div.textBox {
-	height: 16em; // 150px;
+	//height: 16em; // 150px;
 	margin-top: 10px;
 }
 
@@ -787,7 +785,7 @@ div.textBox {
 }
 
 div.textBox {
-	height: 20em; // 150px;
+	//height: 20em; // 150px;
 	margin-top: 10px;
 }
 
@@ -811,6 +809,13 @@ div.textBox {
   //  width: 200px;
   //  height: 345px;
   //}
+.articleText {
+	max-width: 100%;
+	margin-left: 15px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-size: 14px;
+}
 
 }
 
@@ -842,7 +847,7 @@ div.textBox {
 }
 
 div.textBox {
-	height: 23em; // 150px;
+	//height: 23em; // 150px;
 	margin-top: 10px;
 }
 
