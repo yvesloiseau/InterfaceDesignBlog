@@ -8,7 +8,9 @@
 
     <% if @comment.errors.any? %>
       <div id="error_explanation">
-        <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this product from being saved:</h2>
+        <h2><%= pluralize(@comment.errors.count, "error") %>
+          prohibited this product from being saved:
+        </h2>
         <ul>
         <% @comment.errors.full_messages.each do |message| %>
           <li><%= message %></li>
@@ -23,18 +25,22 @@
   <div class="form-Comments">
     <p>
     <%= f.label :"Your comment", :class => 'formText'  %>
-    <%= f.text_area(:article_comment, cols: 25, rows: 10, class: 'form_control') %>
+    <%= f.text_area(:article_comment, cols: 25, rows: 10,
+    class: 'form_control') %>
     </p>
 
     <p>
-    <%= f.label :"If any, enter an image or video url in addition to your comment", :class => 'formText' %><br>
+    <%= f.label :"If any, enter an image or video url to complement your comment",
+    :class => 'formText' %><br>
     <%= f.text_field :user_imageorvideo, size: 30, :class => 'formField' %>
     </p>
   </div>
   <div class="add_comments">
     <p>
       <%= f.submit 'Add comment', :class => 'btn-primary inline'%>
-      <input type="button" class="but-reset btn-primary inline" name="clear" value="Clear Form" class="clearForm" onclick="clearForm(this.form);">
+      <input type="button"
+      class="but-reset btn-primary inline" name="clear"
+      value="Clear Form" class="clearForm" onclick="clearForm(this.form);">
     </p>
   </div>
   <% end %>

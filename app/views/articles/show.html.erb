@@ -55,7 +55,8 @@
     </div>
 <% end %>
   <% else %>
-    <h3 class="reviewHeaders noReviews">  Be the first to review this product  &rarr;</h3>
+    <h3 class="reviewHeaders noReviews">  Be the first to review this product  &rarr;
+    </h3>
   <% end %>
 
 
@@ -63,13 +64,16 @@
     <div class="indexButtons">
 
       <!-- Go to BLOG Index page -->
-      <%= button_to "Blog", root_path, class: 'btn btn-primary btn-sm inline articleButtons', :method => :get %>
+      <%= button_to "Blog", root_path,
+      class: 'btn btn-primary btn-sm inline articleButtons', :method => :get %>
 
       <!-- Re-direct the user from where he came from -->
-      <%= button_to "Back", session[:previous_url], class: 'btn btn-primary btn-sm inline articleButtons', :method => :get  %>
+      <%= button_to "Back", session[:previous_url],
+      class: 'btn btn-primary btn-sm inline articleButtons', :method => :get  %>
 
       <!-- Go to Articles list -->
-      <%= button_to "Articles", articles_path, class: 'btn btn-primary btn-sm inline articleButtons', :method => :get %>
+      <%= button_to "Articles", articles_path,
+      class: 'btn btn-primary btn-sm inline articleButtons', :method => :get %>
 
     </div>
   </div>

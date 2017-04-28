@@ -3,10 +3,13 @@
   <div class="row">
     <!-- <h2 class="articleID"><%= article.id %></h2>  -->
     <h2 class="articleTitle"><%= article.article_title %></h2>
-      <h5 class="articlePostedByInfo">Posted by: <%= article.posted_by %><span>  /  <%= article.created_at %> </span></h5>
+      <h5 class="articlePostedByInfo">Posted by: <%= article.posted_by %>
+      <span>  /  <%= article.created_at %> </span>
+      </h5>
 
     <div class="articleDetails">
-      <p><%= image_tag(article.article_image, alt: "Edit Entry", class: "articleImage img-responsive")%></p>
+      <p><%= image_tag(article.article_image, alt: "Edit Entry",
+      class: "articleImage img-responsive")%></p>
 
       <div class="textBox">
         <p><%= article.article_text %></p>
@@ -25,12 +28,13 @@
             <span class="glyphicon glyphicon-ok"></span>
           <% end %>
 
-          <%= link_to edit_article_path(article), class: "btn btn-default btn-circle" do %>
-            <span class="glyphicon glyphicon-edit"></span>
-          <% end %>
+          <%= link_to edit_article_path(article),
+            class: "btn btn-default btn-circle" do %>
+          <span class="glyphicon glyphicon-edit"></span>
+            <% end %>
 
           <%= link_to article, method: :delete, data: { confirm: 'Are you sure?' },
-          class: "btn btn-default btn-circle" do %>
+            class: "btn btn-default btn-circle" do %>
           <span class="glyphicon glyphicon-remove"></span>
             <% end %>
 

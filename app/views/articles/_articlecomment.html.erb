@@ -1,14 +1,13 @@
-<!-- *********************************************************************************************************** -->
-<!-- ARTICLE PARTIAL PAGE STARTS HERE                                                                          *******-->
-<!-- *********************************************************************************************************** -->
+<!-- *********************************************************************** -->
+<!-- Show 2 products per line -->
+<div class="col-md-12 col-xs-12 articleRow"> <!-- col-md-12 col-xs-12 -->
+  <h2 class="articleTitle">Showing the article comments</h2>
+  <h2 class="articleTitle"><%= articlecomment.comment %></h2>
+    <h5 class="articlePostedByInfo">Posted by: <%= articlecomment.posted_by %>
+    <span>  /  <%= articlecomment.posted_date %> </span>
+    </h5>
 
-<!-- Show 4 products per line -->
-<div class="col-md-12 col-xs-12 articleRow"> <!-- col-md-12 col-xs-12 --> 
-  <h2 class="articleTitle">Showing the article comments</h2> 
-  <h2 class="articleTitle"><%= articlecomment.comment %></h2> 
-    <h5 class="articlePostedByInfo">Posted by: <%= articlecomment.posted_by %><span>  /  <%= articlecomment.posted_date %> </span></h5>
+  <div class="articleDetails">
+  </div>
 
-  <div class="articleDetails"> 
-
-  </div> 
 </div>
