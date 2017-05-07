@@ -8,7 +8,13 @@ before_action :configure_permitted_parameters, if: :devise_controller?
 protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :alternate_email])
-    devise_parameter_sanitizer.permit(:accout_update, keys: [:first_name, :last_name, :alternate_email])
+    devise_parameter_sanitizer.permit(:sign_up,
+                              keys:   [:first_name,
+                                       :last_name,
+                                       :alternate_email])
+    devise_parameter_sanitizer.permit(:accout_update,
+                              keys: [:first_name,
+                                     :last_name,
+                                     :alternate_email])
   end
 end

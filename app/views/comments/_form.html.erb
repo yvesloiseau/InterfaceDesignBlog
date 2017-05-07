@@ -1,10 +1,8 @@
-<!-- Capturing user/customers comments from the contact page          %%%%%% -->
+<!-- Capturing user/customers comments from the contact page  -->
     <!-- Only dispay comments entry form if user is signed in -->
-  <% if signed_in? %>
-  <h3 class="inputForm">Complete the info to reply</h3>
-
+<% if signed_in? %>
+  <h3 class="input-form">Complete the info to reply</h3>
     <%= form_for([@article, @comment]) do |f| %>
-
 
     <% if @comment.errors.any? %>
       <div id="error_explanation">
@@ -22,20 +20,21 @@
   <div class="form-group">
   </div>
 
-  <div class="form-Comments">
+  <div class="form-comments">
     <p>
     <%= f.label :"Your comment", :class => 'formText'  %>
     <%= f.text_area(:article_comment, cols: 25, rows: 10,
-    class: 'form_control') %>
+    class: 'form-control') %>
     </p>
 
     <p>
-    <%= f.label :"If any, enter an image or video url to complement your comment",
-    :class => 'formText' %><br>
-    <%= f.text_field :user_imageorvideo, size: 30, :class => 'formField' %>
+    <%= f.label \
+      :"If any, enter an image or video url to complement your comment",
+      :class => 'form-text' %><br>
+    <%= f.text_field :user_imageorvideo, size: 30, :class => 'form-field' %>
     </p>
   </div>
-  <div class="add_comments">
+  <div class="add-comments">
     <p>
       <%= f.submit 'Add comment', :class => 'btn-primary inline'%>
       <input type="button"
@@ -46,5 +45,5 @@
   <% end %>
 
 <% else %>
-  <h3 class="inputForm">Please sign in to reply to this article</h3>
+  <h3 class="input-form">Please sign in to reply to this article</h3>
 <% end %>

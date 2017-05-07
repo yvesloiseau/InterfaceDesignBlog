@@ -2,17 +2,14 @@
 <!-- Only display approved comments if user is not the admin. -->
 <% if comment.approved || (signed_in? && current_user.admin?)%>
 
-<% @valid_comments += 1 %>
-
+  <% @valid_comments += 1 %>
   <div class="row">
-    <div class="col-md-6 col-xs-12 commentRow"> <!-- col-md-12 col-xs-12 -->
-
-
-      <h4 class="articleComment"><%= comment.article_comment %></h4>
-
-      <h5 class="articlePostedByInfo">Posted by: <%= comment.user.id %> &nbsp;
+    <div class="col-md-6 col-xs-12 comment-row">
+      <h4 class="article-comment"><%= comment.article_comment %></h4>
+      <h5 class="article-posted-by-info">Posted by:
+        <%= comment.user.id %> &nbsp;
         <%= comment.user.first_name %>&nbsp;
-        <%=comment.user.last_name %> <span> / <small><em>
+        <%= comment.user.last_name %> <span> / <small><em>
         <%= "#{time_ago_in_words(comment.created_at)} ago" %></em>
         </small></span>
       </h5>
@@ -20,83 +17,82 @@
       <!-- Show Iframe if embeded image, image_tag if jpg or jeg and
       regular text if not -->
       <% if comment.user_imageorvideo != "" %>
-
         <% if comment.user_imageorvideo.include? "embed" %>
-          <div class="youtube_video">
-            <iframe class= "youtubeVideo" src="<%=comment.user_imageorvideo %>"
+          <div class="youtube-video">
+            <iframe class= "youtube-video" src="<%=comment.user_imageorvideo %>"
             frameborder="0" allowfullscreen>
             </iframe>
           </div>
-
         <% elsif comment.user_imageorvideo.include? "jp" %>
-            <p>
-              <%= image_tag(comment.user_imageorvideo, alt: "Edit Entry",
-              class: "showArticleVideo img-responsive")%>
-            </p>
-
+          <p>
+            <%= image_tag(comment.user_imageorvideo, alt: "Edit Entry",
+            class: "show-article-video img-responsive")%>
+          </p>
         <% else %>
-          <p class="articleText"> <%= comment.user_imageorvideo %> </p>
+          <p class="article-text"> <%= comment.user_imageorvideo %> </p>
        <% end %>
       <% end %>
-        <% if signed_in? && current_user.admin? %>
 
+      <% if signed_in? && current_user.admin? %>
         <!-- Form for comment review and approval by the admin -->
-        <div class="comments_update">
+        <div class="comments-update">
         <%= form_for ("comment"),
           url: article_comment_path(comment.article, comment),
-          method: :put, :html => { :class => "form comment_update" } do |f| %>
+          method: :put, :html => { :class => "form comment-update" } do |f| %>
 
-          <% if @comment.errors.any? %>
-            <div id="error_explanation">
-              <h2><%= pluralize(@comment.errors.count, "error") %>
-                prohibited this product from being saved:
-              </h2>
-              <ul>
-              <% @comment.errors.full_messages.each do |message| %>
-               <li><%= message %></li>
-              <% end %>
-              </ul>
-            </div>
-          <% end %>
-
-          <div class="form-group approve_fields">
-            <%= f.hidden_field :id%>
-            <%= f.label :"Click to approve",
-            :class => 'formText approved_label inline'  %>
-            <%= f.check_box :approved,
-            :class =>  'squaredFour check_box form_control inline' %>
-          </div>
-
-          <div class="update_comments">
-            <!-- <p> -->
-              <%= f.submit 'Approve', :class => 'btn-primary inline'%>
-            <!-- </p> -->
-          </div>
-          <% end %>
-
-        <%= link_to article_comment_path(comment.article, comment),
-            method: :delete, data: { confirm: 'Are you sure?' },
-            class: "btn btn-default inline" do %>
-            <span class="glyphicon glyphicon-remove"></span>
+        <% if @comment.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@comment.errors.count, "error") %>
+              prohibited this product from being saved:
+            </h2>
+            <ul>
+            <% @comment.errors.full_messages.each do |message| %>
+             <li><%= message %></li>
             <% end %>
-        </div>
+            </ul>
+          </div>
         <% end %>
+
+        <div class="form-group approve-fields">
+          <%= f.hidden_field :id%>
+          <%= f.label :"Click to approve",
+          :class => 'form-text approved-label inline'  %>
+          <%= f.check_box :approved,
+          :class =>  'squaredFour check_box form_control inline' %>
+        </div>
+
+        <div class="update-comments">
+          <!-- <p> -->
+            <%= f.submit 'Approve', :class => 'btn-primary inline'%>
+          <!-- </p> -->
+        </div>
+      <% end %>
+
+      <%= link_to article_comment_path(comment.article, comment),
+          method: :delete, data: { confirm: 'Are you sure?' },
+          class: "btn btn-default inline" do %>
+          <span class="glyphicon glyphicon-remove"></span>
+          <% end %>
+      </div>
+    <% end %>
     </div>
   </div>
 
   <div class="row">
-    <div class="col-md-6 col-xs-12 commentRow">
+    <div class="col-md-6 col-xs-12 comment-row">
 
-      <div class="commentButtons">
+      <div class="comment-buttons">
         <!-- Show the Destroy button only if date is the same as today -->
-        <% if current_user.id == comment.user.id%>
-          <% current_time = DateTime.now %>
-          <% if comment.created_at.to_date == current_time.to_date %>
+        <% if signed_in? %>
+          <% if current_user.id == comment.user.id%>
+            <% current_time = DateTime.now %>
+            <% if comment.created_at.to_date == current_time.to_date %>
             <p>
               <%= link_to 'Remove Comment', [comment.article, comment],
               method: :delete, data: { confirm: 'Are you sure?' },
-              class: "btn btn-default remove_comment" %>
+              class: "btn btn-default remove-comment" %>
             </p>
+            <% end %>
           <% end %>
         <% end %>
       </div>

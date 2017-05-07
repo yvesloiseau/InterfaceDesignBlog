@@ -19,10 +19,15 @@ p, ol, ul, td {
   margin:0;
 }
 
+To put in place in next version of blog
+//html, body {
+//    font-size: 16px;
+//}
+
 // ******************************************************
 // *  Main styling rule                                 *
 // ******************************************************
-.imgTwo {
+.img-two {
   margin-left: auto;
   margin-right: auto;
 }
@@ -38,18 +43,18 @@ p, ol, ul, td {
 	margin-left: auto;
 }
 
-.golfBlogTitle {
+.golf-blog-title {
   width: 75%;
 }
 
-.golfBlofTextBox {
+.golf-blog-text-box {
   width: 50%;
   height: 10em;
   height: auto;
   margin-bottom: 40px;
 }
 
-.golfBlog {
+.golf-blog {
   padding-left: 15px;
 }
 
@@ -57,60 +62,60 @@ p, ol, ul, td {
   margin:0;
 }
 
-.aboutTools {
+.about-tools {
   width: 90%;
   height: auto;
 }
 
-.aboutRubyandRails {
+.about-ruby-and-rails {
   width: 70%;
   height: auto;
 }
 
-.moreInfoAbout {
+.more-info-about {
   width: 70%;
   height: auto;
 }
 
-.about_page_indent {
+.about-page-indent {
   padding-left: 15px;
   width: 100%;
   height: auto;
 
 }
 
-.contact_Header  {
+.contact-header  {
   display: inline-block;
   width: 100%; // 55.55555556%;  // 800px;
   height: auto;
 }
 
-.contact_phone  {
+.contact-phone  {
 //  display: inline-block;
   width: 100%; // 34.72222222%;  // 500px;
   height: auto;
 }
 
-.myBackground  {
+.my-background  {
   width: 90%;  // 55.55555556%;  // 800px;
   height: auto;
 }
 
-.moreInfo  {
+.more-info  {
   width: 100%; //34.72222222%;  // 500px;
   height: auto;
 }
 
-.feedback_message {
+.feedback-message {
   width: 100%;  // 55.55555556%;  // 800px;
   height: auto;
 }
 
-.contact_Page_Indent {
+.contact-page-indent {
   padding-left: 5px;
 }
 
-.other_work {
+.other-work {
   padding-left:15px;
 }
 
@@ -118,47 +123,47 @@ p, ol, ul, td {
   display: inline; //block;
 }
 
-.form.form_contact_form {
+.form.form-contact-form {
   width:80%;
 }
 
 // ******************************************************
 // *  Anchor tags and pages height                      *
 // ******************************************************
-.anchor_about {
+.anchor-about {
   padding-top: 80px;
   }
 
-.anchor_contact {
+.anchor-contact {
   padding-top: 80px;  //*30px;*/
   padding-left: 1em; //*12px;*/
   padding-right: 0px;
   }
 
-.anchor_index {
+.anchor-index {
   padding-top: 90px;
 	}
 
-div#index.container-fluid.anchor_index {
+div#index.container-fluid.anchor-index {
   height: 700px;
   max-width: 100%;
   max-height: 100%;
 	}
 
-div#about.container-fluid.work.anchor_about {
+div#about.container-fluid.work.anchor-about {
   height: 690px;
   max-width: 100%;
   max-height: 100%;
   }
 
-div#contactus.container-fluid.anchor_contact {
+div#contactus.container-fluid.anchor-contact {
   height: 700px;
   height: auto;
   max-width: 100%;
   max-height: 100%;
   }
 
-.thankYouPopup {
+.thank-You-popup {
   border-style: solid;
   border-width: 2px;
   border-color: grey;
@@ -175,15 +180,15 @@ div#contactus.container-fluid.anchor_contact {
 
 }
 
-.thankyouButton {
+.thank-you-button {
   margin-left: 10px;
 }
 
-.thank_you {
+.thank-you {
   padding-left: 0;
 }
 
-.myBackground p {
+.my-background p {
   padding-left: 5px;
 }
 
@@ -191,40 +196,36 @@ div#contactus.container-fluid.anchor_contact {
 // *  Topographic rules                                 *
 // ******************************************************
 
-.myBackground h4,
+.my-background h4,
  .contact_Page_Indent h4,
  .contact_email  h4,
  .contact_phone h4 {
   color: #264553;
 }
 
-.myBackground p {
+.my-background p {
   font-size: 1.40em;
 }
 
-.other_work  {
+.other-work  {
   font-size: 1.50em;
 }
 
-.thank_you {
+.thank-you {
   //font-size: 1.50em;
 }
 
-.enterBlogButton h3 {
+.enter-blog-button h3 {
   color:  #333399; //#254451;
 }
 
-.golfBlog {
+.golf-blog {
   color: #264553; // #5535D2; //blue; //#254451;
 }
 
-.golfBlogTitle {
-
-}
-
-.aboutTools h3,
-.aboutRubyandRails h3,
-.moreInfoAbout h3 {
+.about-tools h3,
+.about-ruby-and-rails h3,
+.more-info-about h3 {
   color: #333399;
 }
 
@@ -242,15 +243,11 @@ div#contactus.container-fluid.anchor_contact {
 /*  Max-width = 480px                                */
 /*****************************************************/
 @media (max-width: 480px) {
-	div#index.container-fluid.anchor_index {
+	div#index.container-fluid.anchor-index {
 	max-width: 100%;
-	}
-
-  div#index.container-fluid.anchor_index {
-//	  height: 820px;
-  	padding-top: 50px;
-	  max-width: 100%;
-	  max-height: 100%;
+	padding-top: 50px;
+  max-width: 100%;
+  max-height: 100%;
 	}
 
 }

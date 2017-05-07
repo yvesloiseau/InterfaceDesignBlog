@@ -1,80 +1,77 @@
 <!-- ********************************************************************** -->
-<div class="container-fluid anchor_show" id="show">
-  <div class="row articleFeatures">
-
+<div class="container-fluid anchor-show" id="show">
+  <div class="row article-features">
     <p id="notice"><%= notice %></p>
-
-    <h2 class="articleTitle"> <%= @article.article_title %></h2>
-    <h5 class="articlePostedByInfo">Posted by: <%= @article.posted_by %><span>  /  <%= @article.posted_date %> </span></h5>
+    <h2 class="article-title"> <%= @article.article_title %></h2>
+    <h5 class="article-posted-by-info">Posted by:
+      <%= @article.posted_by %><span>  /  <%= @article.posted_date %> </span>
+    </h5>
 
     <!-- Display article content -->
-    <div class="col-md-6 col-xs-12"> <!-- col-md-6 col-xs-6 -->
-      <div class="productFields">
-
-        <h2>
+    <div class="col-md-6 col-xs-12">
+      <div class="product-fields">
+       <h2>
           <strong>Article features:</strong>
         </h2>
-        <p class="articleText"> <%= @article.article_text %> </p>
+        <p class="article-text"> <%= @article.article_text %> </p>
 
         <p><%= image_tag(@article.article_image, alt: "Edit Entry",
-          class: "showArticleImage img-responsive")%>
+          class: "show-article-image img-responsive")%>
         </p>
-
         <% if @article.article_video.include? "embed" %>
-          <p class="youtube_video">
-            <iframe class= "youtubeVideo" src="<%=@article.article_video %>"
+          <p class="youtube-video">
+            <iframe class= "youtube-video" src="<%=@article.article_video %>"
             frameborder="0" allowfullscreen>
             </iframe>
           </p>
 
         <% elsif @article.article_video.include? "jpg" %>
           <p><%= image_tag(@article.article_video, alt: "Edit Entry",
-            class: "showArticleVideo img-responsive")%>
+            class: "show-article-video img-responsive")%>
           </p>
         <% else %>
-          <p class="articleText"> <%= @article.article_text %> </p>
+          <p class="article-text"> <%= @article.article_text %> </p>
         <% end %>
-
-        <p class="articleText"> <%= @article.article_details %> </p>
+        <p class="article-text"> <%= @article.article_details %> </p>
       </div>
     </div>
 
     <!-- Form to capture comments for the article -->
-    <div class="col-md-6 col-xs-6 commentsForm"> <!-- col-md-6 col-xs-6 -->
+    <div class="col-md-6 col-xs-6 comments-form">
       <%= render 'comments/form' %>
     </div>
   </div>
 
   <!-- Show Article Comments -->
   <% if @article.most_recent_comment != nil %>
-
     <%= render @comments %>
-   <% if @valid_comments > 0 %>
-    <div class="col-md-6 col-xs-12"> <!-- col-md-4 col-xs-8 -->
-      <%= will_paginate @comments, :class => 'flickr_pagination' %>
-    </div>
-<% end %>
+    <% if @valid_comments > 0 %>
+      <div class="col-md-6 col-xs-12">
+        <%= will_paginate @comments, :class => 'flickr_pagination' %>
+      </div>
+    <% end %>
   <% else %>
-    <h3 class="reviewHeaders noReviews">  Be the first to review this product  &rarr;
+    <h3 class="review-headers no-reviews">
+      Be the first to review this product  &rarr;
     </h3>
   <% end %>
 
-
   <div class="row">
-    <div class="indexButtons">
-
+    <div class="index-buttons">
       <!-- Go to BLOG Index page -->
       <%= button_to "Blog", root_path,
-      class: 'btn btn-primary btn-sm inline articleButtons', :method => :get %>
+      class: 'btn btn-primary btn-sm inline article-buttons',
+        :method => :get %>
 
       <!-- Re-direct the user from where he came from -->
       <%= button_to "Back", session[:previous_url],
-      class: 'btn btn-primary btn-sm inline articleButtons', :method => :get  %>
+      class: 'btn btn-primary btn-sm inline article-buttons',
+        :method => :get  %>
 
       <!-- Go to Articles list -->
       <%= button_to "Articles", articles_path,
-      class: 'btn btn-primary btn-sm inline articleButtons', :method => :get %>
-
+      class: 'btn btn-primary btn-sm inline article-buttons',
+        :method => :get %>
     </div>
   </div>
 </div>

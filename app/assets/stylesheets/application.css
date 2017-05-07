@@ -55,7 +55,7 @@ nav {
 	    padding-bottom: 20px;
 	}
 
-	div.projectName.navbar-brand {
+	div.project-name.navbar-brand {
    padding-top: 10px;
    padding-bottom: 25px;
    margin-bottom: 5px;
@@ -104,7 +104,7 @@ ul.social-links {
   margin-bottom: 5px;
 }
 
-.notice_area {
+.notice-area {
   margin-top: 80px;
   margin-bottom: 5px;
 }
@@ -118,7 +118,7 @@ ul.social-links {
   background-color: transparent;
 }
 
-.navbar_custom {
+.navbar-custom {
   background-color: #fff; /* #9d9d9d; #264553;*/
   color: white; /* #ffffff;*/
   border-radius:0;
@@ -144,7 +144,7 @@ p {
 	font-size: 1.15em; /*14px;*/
 }
 
-.formField {
+.form-field {
   border-style: solid;
   border-width: 1px;
   border-color: grey;
@@ -168,4 +168,3 @@ footer {
   font-weight: 900;
   color: red;
 }
-

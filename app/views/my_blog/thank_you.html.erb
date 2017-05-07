@@ -1,5 +1,5 @@
-<!-- *** Thanks you template - to issue confoirmation message after email is sent *** -->
-<div class="panel panel-default thankYouPopup">
+<!-- Issue confirmation message after email is sent -->
+<div class="panel panel-default thank-you-popup">
   <div class="panel-body">
     <p>Thank you for writing to us! </p>
     <br>
@@ -8,12 +8,14 @@
     <p>Have a great day!</p>
   </div>
 
-  <div class="thankyouButton">
+  <div class="thank-you-button">
     <!-- Back to Product list -->
-    <%= button_to "Back", my_blog_contact_path, class: 'btn btn-primary btn-sm inline', :method => :get %>
+    <%= button_to "Back", my_blog_contact_path,
+      class: 'btn btn-primary btn-sm inline', :method => :get %>
 
     <!-- Go back HOME-->
-    <%= button_to "Home", root_path, class: 'btn btn-primary btn-sm inline', :method => :get %>
+    <%= button_to "Home", root_path,
+      class: 'btn btn-primary btn-sm inline', :method => :get %>
   </div>
 
 </div>

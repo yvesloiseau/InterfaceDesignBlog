@@ -12,11 +12,16 @@ class CommentsController < ApplicationController
     respond_to do |format|
 
       if @comment.save
-        format.html { redirect_to article_path(@article), notice: 'Review was created successfully.' }
+        format.html do
+          redirect_to article_path(@article),
+           notice: 'Review was created successfully.'
+         end
         format.json { render :show, status: :created, location: @article }
       else
         format.html { render 'articles/show' }
-        format.json { render json: @comment.errors, status: :unprocessable_entity }
+        format.json do
+          render json: @comment.errors, status: :unprocessable_entity
+        end
       end
     end
 
@@ -28,20 +33,18 @@ class CommentsController < ApplicationController
     @article = Article.find(params[:article_id])
     @comment = @article.comments.find(params[:id])
 
-    #@comment = params[:id]
-    #@approved = params[:approved]
-    #@comment.update(comment_approve_params)
-
-#    respond_to do |format|
-#      format.html { redirect_to :back, notice: 'Review was created successfully.' }
-#    end
     respond_to do |format|
       if @comment.update(comment_approve_params)
-        format.html { redirect_to article_path(@article), notice: 'Review was updated successfully.' }
+        format.html do
+          redirect_to article_path(@article),
+            notice: 'Review was updated successfully.'
+          end
         format.json { render :show, status: :created, location: @article }
       else
         format.html { render 'articles/show' }
-        format.json { render json: @comment.errors, status: :unprocessable_entity }
+        format.json do
+          render json: @comment.errors, status: :unprocessable_entity
+        end
       end
     end
 
@@ -60,13 +63,16 @@ class CommentsController < ApplicationController
   end
 
   private
-    def comment_params
-      params.require(:comment).permit(:posted_by, :article_comment, :user_email,
-        :user_imageorvideo, :user_id, :approved)
-    end
+  def comment_params
+    params.require(:comment).permit(:posted_by,
+                                    :article_comment,
+                                    :user_email,
+                                    :user_imageorvideo,
+                                    :user_id,
+                                    :approved)
+  end
 
-    def comment_approve_params
-      params.require(:comment).permit(:approved)
-    end
-
+  def comment_approve_params
+    params.require(:comment).permit(:approved)
+  end
 end

@@ -1,10 +1,10 @@
 <!-- CONTACT PAGE  -->
-<div class="container-fluid contactc anchor_contact" id="contactus">
+<div class="container-fluid contactc anchor-contact" id="contactus">
   <div class="row" id="work">
     <div class="col-xs-12 col-sm-6 col-md-6">
       <div class="moreInfo">
-        <div class="contact_Page_Indent">
-          <div class="feedback_message">
+        <div class="contact-page-indent">
+          <div class="feedback-message">
             <h1>Write to us!
 
             <h3>We appreciate your comments.</h3>
@@ -21,13 +21,13 @@
           </h5>
           <br>
           <h4>You can take a look at my other work in progress : </h4>
-          <div class="other_work">
+          <div class="other-work">
             <p>
             <strong>https://mycfproject.herokuapp.com/</strong>
             </p>
             <br>
           </div>
-          <h4 class="thank_you">
+          <h4 class="thank-you">
             Thank you and have a nice day
           </h4>
         </div>
@@ -39,26 +39,27 @@
       <%= flash[:notice] %>
 
       <%= form_tag("/my_blog/thank_you", {class: 'form contact_form'}) do %>
-      <div class="fieldgroupContactUsForm">
+      <div class="field-group-contact-us-form">
         <%= label_tag :name %>
-        <%= text_field_tag(:name, nil, class: "name_ContactUs_Form formField",
+        <%= text_field_tag(:name, nil, class: "name-contact-us-form form-field",
         placeholder: "Enter Your Name", size: 30) %>
       </div>
-      <div class="fieldgroupContactUsForm">
+      <div class="field-group-contact-us-form">
         <%= label_tag :email %>
-        <%= text_field_tag :email, nil, class: "name_ContactUs_Form formField",
-        placeholder: "Enter Your email", size: 40 %>
+        <%= text_field_tag :email, nil,
+                            class: "name-contact-us-form form-field",
+                            placeholder: "Enter Your email", size: 40 %>
       </div>
-      <div class="fieldgroupContactUsForm">
+      <div class="field-group-contact-us-form">
         <%= label_tag :message %>
-        <%= text_area_tag :message, nil, class: "message_ContactUs_Form formField",
-        placeholder: "Enter Your Message", style: 'width:95%;', rows: 20 %>
+        <%= text_area_tag :message, nil,
+            class: "message-contact-us-form form-field",
+            placeholder: "Enter Your Message", style: 'width:95%;', rows: 20 %>
       </div>
 
-      <%= submit_tag "Send", class: "contactSubmit btn btn-primary btn-sm" %>
+      <%= submit_tag "Send", class: "contact-submit btn btn-primary btn-sm" %>
       <% end %>
     </div>
 
   </div>
 </div>
-

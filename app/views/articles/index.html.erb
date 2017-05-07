@@ -1,12 +1,9 @@
-<!-- ********************************************************************************************************* -->
-<!-- ARTICLES PAGE STARTS HERE                                                                         ******* -->
-<!-- ********************************************************************************************************* -->
-
-<div class="container-fluid anchor_article" id="article">
+<!-- *********************************************************************** -->
+<div class="container-fluid anchor-article" id="article">
   <div class="row">
     <h4 id="notice"><%= notice %></h4>
 
-    <h1 class="h1Articles">My golf articles</h1>
+    <h1 class="h1-articles">My golf articles</h1>
 
     <% @number_of_articles = 0 %>
     <% @article_product_id = 0 %>
@@ -23,16 +20,17 @@
   </div>
 
   <div class="row">
-    <div class="indexButtons">
+    <div class="index-buttons">
 
       <!-- Go back -->
       <%= button_to "Home", root_path,
-      class: 'btn btn-primary btn-sm inline articleButtons', :method => :get %>
+      class: 'btn btn-primary btn-sm inline article-buttons', :method => :get %>
 
       <% if signed_in? && current_user.admin? %>
         <!-- Create a new article -->
         <%= button_to "New article", new_article_path,
-        class: 'btn btn-primary btn-sm inline articleButtons', :method => :get %>
+        class: 'btn btn-primary btn-sm inline article-buttons',
+          :method => :get %>
         <% end %>
 
     </div>

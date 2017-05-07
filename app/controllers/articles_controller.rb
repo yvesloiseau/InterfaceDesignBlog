@@ -15,11 +15,13 @@ class ArticlesController < ApplicationController
     if params[:q]
       search_term = params[:q]
       #@articles = Article.search(search_term)
-      @articles = Article.search(search_term).paginate(page: params[:page], per_page: 2)
+      @articles = Article.search(search_term).paginate(page:
+                                              params[:page], per_page: 2)
     else
       #@articles = Article.all
       #@articles = Article.all.paginate(page: params[:page], per_page: 4)
-      @articles = Article.all.paginate(page: params[:page], per_page: 2)
+      @articles = Article.all.paginate(page:
+                                      params[:page], per_page: 2)
     end
 
   end
@@ -30,14 +32,14 @@ class ArticlesController < ApplicationController
     @articleFirst = @article.comments.desc.first
     #@comments = @article.comments.order("created_at DESC")
     if signed_in? and current_user.admin?
-        @comments = @article.comments.order("created_at DESC").paginate(page: params[:page], per_page: 1)
+        @comments = @article.comments.order("created_at DESC").paginate(page:
+                                            params[:page], per_page: 1)
     else
-        @comments = @article.comments.approved_comments.paginate(page: params[:page], per_page: 1)
+        @comments = @article.comments.approved_comments.paginate(page:
+                                                    params[:page], per_page: 1)
     end
-
     @comment = @article.comments.build
     @valid_comments = 0
-
   end
 
   # GET /articles/new
@@ -56,11 +58,15 @@ class ArticlesController < ApplicationController
 
     respond_to do |format|
       if @article.save
-        format.html { redirect_to @article, notice: 'Article was successfully created.' }
+        format.html do
+          redirect_to @article, notice: 'Article was successfully created.'
+        end
         format.json { render :show, status: :created, location: @article }
       else
         format.html { render :new }
-        format.json { render json: @article.errors, status: :unprocessable_entity }
+        format.json do
+          render json: @article.errors, status: :unprocessable_entity
+        end
       end
     end
   end
@@ -70,11 +76,15 @@ class ArticlesController < ApplicationController
   def update
     respond_to do |format|
       if @article.update(article_params)
-        format.html { redirect_to @article, notice: 'Article was successfully updated.' }
+        format.html do
+          redirect_to @article, notice: 'Article was successfully updated.'
+        end
         format.json { render :show, status: :ok, location: @article }
       else
         format.html { render :edit }
-        format.json { render json: @article.errors, status: :unprocessable_entity }
+        format.json do
+          render json: @article.errors, status: :unprocessable_entity
+        end
       end
     end
   end
@@ -84,7 +94,9 @@ class ArticlesController < ApplicationController
   def destroy
     @article.destroy
     respond_to do |format|
-      format.html { redirect_to articles_url, notice: 'Article was successfully destroyed.' }
+      format.html do
+        redirect_to articles_url, notice: 'Article was successfully destroyed.'
+      end
       format.json { head :no_content }
     end
   end
@@ -96,9 +108,14 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
   end
 
-  # Never trust parameters from the scary internet, only allow the white list through.
   def article_params
-    params.require(:article).permit(:article_title, :article_text, :posted_by, :posted_date, :article_image, :article_video, :article_details)
+    params.require(:article).permit(:article_title,
+                                    :article_text,
+                                    :posted_by,
+                                    :posted_date,
+                                    :article_image,
+                                    :article_video,
+                                    :article_details)
   end
 
   def save_my_previous_url
@@ -106,5 +123,4 @@ class ArticlesController < ApplicationController
     @back_url = session[:my_previous_url]
     session[:previous_url] = @back_url
   end
-
 end

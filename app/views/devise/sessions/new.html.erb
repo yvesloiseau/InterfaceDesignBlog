@@ -1,8 +1,10 @@
-<div class="container-fluid authenticat_edit" id="edit">
+<div class="container-fluid authenticat-edit" id="edit">
   <div class="col-md-12 col-xs-12">
     <h2>Login to site</h2>
 
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <%= form_for(resource, as: resource_name,
+      url: session_path(resource_name)) do |f| %>
+
       <div class="field">
         <%= f.label :email %><br />
         <%= f.email_field :email, autofocus: true %>
@@ -27,6 +29,6 @@
   </div>
 </div>
 
-<div class="userLinkButtons">
+<div class="user-link-buttons">
   <%= render "devise/shared/links" %>
 </div>
